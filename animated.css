@@ -1,0 +1,332 @@
+body,
+html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+
+main {
+    display: grid;
+    gap: 1rem;
+    justify-content: end;
+    padding-right: 1rem;
+    height: 100vh;
+    /* grid-template-rows: 1fr 1fr 1fr 1fr 1fr; */
+    align-items: center;
+}
+
+.circle {
+    height: 4vw;
+    width: 4vw;
+    border-radius: 50%;
+    background: black;
+    border: 2px solid white;
+    display: grid;
+    place-items: center;
+    color: white;
+    font-weight: bold;
+    font-size: .6rem;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.sections div h1 {
+    opacity:0;
+}
+
+.circle:hover ~ .sections div h1{
+    animation: fadeIn .4s .5s forwards;
+}
+
+@keyframes fadeIn {
+    from{
+        opacity:0;
+        transform:translateY(-2rem);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.circle:nth-child(1) {
+    background: green;
+}
+
+.circle:nth-child(1):hover~.sections .left {
+    left: 0;
+}
+
+.circle:nth-child(2) {
+    background: #fed766;
+    ;
+}
+
+.circle:nth-child(2):hover ~ .sections .right{
+    right: 0;
+}
+
+.circle:nth-child(3) {
+    background: #4285F4;
+    ;
+}
+
+.circle:nth-child(3):hover~.sections .bottom{
+    bottom: 0;
+}
+.circle:nth-child(4):hover~.sections .top{
+    top: 0;
+}
+
+.circle:nth-child(4) {
+    background: #fe4a49;
+    ;
+}
+
+.circle:nth-child(5) {
+    background: #2ab7ca;
+}
+
+.circle:nth-child(5):hover ~ .sections .left{
+    left:0;
+}
+.circle:nth-child(5):hover ~ .sections .right{
+    right:0;
+}
+.circle:nth-child(5):hover ~ .sections .bottom{
+    bottom:0;
+}
+.circle:nth-child(5):hover ~ .sections .top{
+    top:0;
+}
+
+.sections div {
+    position: fixed;
+    display: grid;
+    place-items: center;
+    color: white;
+    transition: .5s ease-in-out;
+    z-index: -1;
+}
+
+.sections div.left {
+    top: 0;
+    left: -50vw;
+    width: 50vw;
+    height: 100vh;
+    background: green;
+    z-index:-2;
+}
+
+.sections div.right {
+    top: 0;
+    right: -50vw;
+    width: 50vw;
+    height: 100vh;
+    background: #fed766;
+    z-index:-2;
+}
+
+.sections div.bottom {
+    bottom: -20vh;
+    left: 0;
+    width: 100vw;
+    height: 20vh;
+    background: #4285F4;;
+}
+.sections div.top {
+    top: -30vh;
+    left: 0;
+    width: 100vw;
+    height: 30vh;
+    background: #fe4a49;
+    z-index:-2;
+}
+
+
+/* html, body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+main {
+    display: grid;
+    gap: 1rem;
+    justify-content: end;
+    align-items: center;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    padding-right: 1rem;
+    height: 100vh;
+    border: 1px solid black;
+    /* må ha height for at man skal plassere de 
+}
+
+.circles {
+    width: 4vw;
+    height: 4vw;
+    background-color: orange;
+    border-radius: 50%;
+    border: 2px solid white;
+    z-index: 2;
+    display: grid;
+    place-items: center;
+    color: white;
+    font-weight: bold;
+    font-size: .7rem;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.sections div h1{
+    opacity: 0;
+}
+
+.circle:hover ~ .sections div h1{
+    animation: fadeIn .4s .5s forwards;
+}
+
+@keyframes fadeIn {
+    from{
+        opacity: 0;
+        transform: translateY(-2rem);
+    }
+
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.circles:nth-child(1) {
+    background: green;
+}
+.circles:nth-child(1):hover~.sections .left {
+    left: 0;
+}
+
+.circles:nth-child(2) {
+    background: rgb(124, 51, 107);
+}
+.circles:nth-child(2):hover~.sections .right {
+    right: 0;
+}
+
+.circles:nth-child(3) {
+    background: rgb(235, 191, 14);
+}
+.circles:nth-child(3):hover ~ .sections .bottom {
+    bottom: 0;
+}
+
+.circles:nth-child(4) {
+    background: rgb(0, 77, 128);
+}
+
+.circles:nth-child(4):hover ~ .sections .bottom {
+    top: 0;
+}
+
+.circles:nth-child(5) {
+    background: rgb(128, 0, 43);
+}
+
+.circles:nth-child(5):hover ~ .sections .bottom {
+    all: 0;
+}
+
+.circles:nth-child(5):hover ~ .sections .left{
+    left:0
+}
+.circles:nth-child(5):hover ~ .sections .left{
+    right:0
+}.circles:nth-child(5):hover ~ .sections .left{
+    bottom:0
+}.circles:nth-child(5):hover ~ .sections .left{
+    top:0
+}.circles:nth-child(5):hover ~ .sections .left{
+    left:0
+}
+
+
+
+.sections div {
+    position: fixed;
+    display: grid;
+    place-items: center;
+    color: wheat;
+    transition: .5s ease-in-out;
+}
+
+.sections div.left {
+    top: 0;
+    left: -40vw;
+    width: 40vw;
+    height: 100vh;
+    background: green;
+}
+
+.sections div.right {
+    top: 0;
+    right: -40vw;
+    width: 40vw;
+    height: 100vh;
+    background: rgb(124, 51, 107);
+}
+
+.sections div.bottom {
+    border-top-left-radius: -20vh;
+    bottom: 10;
+    width: 100vw;
+    height: 20vh;
+    background: rgb(235, 191, 14);  
+}
+
+.sections div.top {
+    top: -50vh;
+    left: 0;
+    width: 100vw;
+    height: 50vh;
+    background: rgb(235, 191, 14);  
+}
+
+/* 
+section{
+    width: 5vw;
+    height: 5vw;
+    background: black;
+    position: fixed;
+    left:1rem;
+    bottom: 1rem;
+    border-radius: 50%;
+    z-index: 2; */
+/* z-index er layer i photoshop */
+
+
+/* section:hover {
+    background: orange;
+}
+
+section:hover ~ main{
+    left:0;
+}
+
+
+main {
+    width: 100vw;
+    height: 100vh;
+    background: green;
+    position: fixed;
+    top:0;
+    left:80vw;
+    transition: .3 ease-in-out;
+} */
